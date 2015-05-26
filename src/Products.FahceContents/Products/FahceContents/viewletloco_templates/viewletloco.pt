@@ -1,0 +1,7 @@
+Telefonos de areas: 
+<tal:r tal:repeat="obj viewlet/dame_info">
+      <span tal:attributes="title python: obj[0]" tal:content="python: obj[2].telefono">Enlace</span>
+       <tal:c tal:condition="not: repeat/obj/end">,</tal:c>
+
+</tal:r>
+

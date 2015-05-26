@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.FahceContents">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main" >
+    <div id="nombreyapellido" tal:content="python:context.nombre+' '+context.apellido">Nombre y apellido</div>
+	<tal:r tal:repeat="cargo view/dameReferencia" > 
+
+    <div tal:define="tipoCargo python:cargo.tipo.lower()" tal:attributes="class string:cargo ${tipoCargo}" tal:content="cargo/title"/>
+<!--    <div tal:attributes="class python: cargo.tipo.lower() == 'docente' and 'picho' or 'mandaga'" tal:content="cargo/title"></div> -->
+	</tal:r>
+    
+<!--<tal:r tal:repeat="obj view/dame_carpeta" tal:condition="python:len(view.dame_carpeta())>0">
+<a href="" tal:attributes="href python: obj[1]" tal:content="python: obj[0]"></a>
+</tal:r> -->
+
+<p><a href="" tal:attributes="href python:'http://www.memoria.fahce.unlp.edu.ar/library?a=q&r=1&hs=1&css=1&c=all&t=0&q='+context.nombre+'+'+context.apellido+'&fqf=DC&cc=arti&j=fu&cc=convenio&cc=eventos&cc=libros&cc=norma&sf=&cc=planes&cc=progra&cc=proyecto&cc=tesis'" target="_blank">Ver en memoria académica</a></p>
+<p><a href="" tal:attributes="href python:'http://www.revistas.fahce.unlp.edu.ar/index.php/index/search/search?authors='+context.nombre+'+'+context.apellido" target="_blank">Ver en el sitio de revistas</a></p>
+<p><a href="" tal:condition="python: context.id_conicet" tal:attributes="href python: 'http://www.conicet.gov.ar/new_scp/detalle.php?id='+context.id_conicet+'&datos_academicos=yes'" target="_blank">Ver datos en conicet</a></p>
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

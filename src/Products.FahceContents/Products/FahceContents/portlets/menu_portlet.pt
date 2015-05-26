@@ -1,0 +1,11 @@
+<div class="portletNavegacion" tal:define="dato_menu view/dameItems">
+	<ul>
+		<tal:r tal:repeat="obj dato_menu">
+			<li tal:attributes="class python:obj[1] and 'menu_item indent' or 'menu_item'">
+				<a href="" tal:attributes="href python: obj[2]" tal:content="python:obj[0]"></a>
+			</li>
+		</tal:r>
+	</ul>
+</div>
+
+

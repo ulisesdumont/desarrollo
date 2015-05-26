@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.FahceContents">
+<body>
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+  <div tal:define="listado view/dame_noticias" class="noticias">
+	<tal:r tal:repeat="noticia listado">
+	<div class="noticia_destacada">
+	<h3 tal:content="python:noticia[0]">Titulo de la noticia</h3>
+	<p tal:content="python:noticia[1]">Descripcion</p>
+	<a href="#" tal:attributes="href python:noticia[2]">Leer completa</a>
+	</div>
+	</tal:r>
+ </div>  
+ <div tal:define="listado view/dame_eventos" class="eventos">
+	<tal:x tal:repeat="evento listado">
+	<div class="evento_destacado">
+	<h3 tal:content="python:evento[0]">Titulo del evento</h3>
+	<p tal:content="python:evento[1]">Descripcion</p>
+	<a href="#" tal:attributes="href python:evento[2]">Leer completo</a>
+	</div>
+	</tal:x>
+ </div>  
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+diazotheme.fahceSkin Installation
+---------------------------------
+
+To install diazotheme.fahceSkin using zc.buildout and the plone.recipe.zope2instance
+recipe to manage your project, you can do this:
+
+* Add ``diazotheme.fahceSkin`` to the list of eggs to install, e.g.:
+
+    [buildout]
+    ...
+    eggs =
+        ...
+        diazotheme.fahceSkin
+       
+* Re-run buildout, e.g. with:
+
+    $ ./bin/buildout

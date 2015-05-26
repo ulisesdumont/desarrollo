@@ -1,0 +1,655 @@
+/* Stylesheet for the 'ICustomTheme' Plone browser layer */
+body{
+	margin:0;
+	padding:0;
+}
+.clr{
+	clear:both;
+	height:0;
+	line-height:0;
+	font-size:0;
+}
+p,li{
+color:#666666;
+}
+#headerTop{
+	background-color:#65ab10;
+	height:62px;
+	border-bottom:2px solid #519401;
+}
+.linkFahce{
+	float:left;
+	margin:18px 0 0 26px;
+}
+ul.menuTop {
+    float: right;
+    list-style: outside none none;
+    margin-right: 15px;
+    width: auto;
+    margin-top:25px;
+    font-family:"Arial",sans-serif;
+}
+ul.menuTop li:first-child {
+    border: medium none;
+}
+ul.menuTop li {
+    border-left: 1px solid #ffffff;
+    float: left;
+    font-size: 10px;
+    padding: 0 5px;
+}
+.menuTop a {
+    color: #ffffff !important;
+    text-decoration:underline;
+}
+ul.menuTop {
+    float: right;
+    list-style: outside none none;
+    margin-right: 15px;
+    margin-top: 25px;
+    width: auto;
+}
+ul.menuTop li:first-child {
+    border: medium none;
+}
+
+ul.menuTop li {
+    border-left: 1px solid #ffffff;
+    float: left;
+    font-size: 10px;
+    padding: 0 5px;
+}
+.menuTop a {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+.section-front-page #portal-top{
+	height:100px;
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+#portal-top{
+	height:48px;
+	background:transparent left bottom no-repeat;
+	border-bottom:2px solid #65ab10;
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-institucional #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-academica #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-posgrado #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-investigacion-idihcs #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-extension #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+.section-biblioteca #portal-top{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/cabezalPrueba1.jpg");
+}
+/*
+reutilizar una vez que se intale jquery
+
+#portal-top.cabezal1{
+	background-image:url("imagenes/cabezalPrueba1.jpg");
+}
+#portal-top.cabezal2{
+	background-image:url("imagenes/cabezalPrueba2.jpg");
+}
+#portal-top.cabezal3{
+	background-image:url("imagenes/cabezalPrueba3.jpg");
+}
+#portal-top.cabezal4{
+	background-image:url("imagenes/cabezalPrueba4.jpg");
+}*/
+#portal-globalnav {
+    background-color: transparent;
+    display: block;
+    height: 31px;
+    margin: 26px 0 0;
+    padding-top: 0;
+    text-align: right;
+	float:right;
+}
+.section-front-page #portal-globalnav {
+    margin: 78px 0 0;
+}
+#portal-globalnav li {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/separadorMenu.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    border-left: medium none !important;
+    display: inline;
+    height: 21px;
+    margin: 0 !important;
+    padding: 0 15px 9px 5px !important;
+}
+#portal-globalnav li a {
+    background-color: transparent !important;
+    border: 0 none;
+    color: #999999;
+    font-family: "Georgia",serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 !important;
+    text-align: left;
+    text-transform: capitalize;
+	text-decoration:none;
+}
+/*submenu desplegable*/
+.submenuContainer {
+    padding-top: 0;
+    position: absolute;
+    right: 5px;
+    width: 620px;
+    z-index: 1000;
+}
+.dropdownContain {
+    display: none;
+    margin-top: -2px;
+	padding-top: 11px;
+	height:50px;
+}
+.dropOut {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    float: left;
+    margin-top: 0;
+    padding: 4px 7px 4px 12px;
+    position: relative;
+    transition: all 0.1s ease-out 0s;
+    width: 600px;
+}
+#subPosgrado .triangle {
+    left: 244px;
+}
+.triangle {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/flechaUp.png") no-repeat scroll center top transparent;
+    height: 19px;
+    position: absolute;
+    top: -19px;
+    width: 66px;
+}
+.dropOut ul {
+    margin: 0;
+    padding: 0;
+}
+.dropOut ul li {
+    display: block;
+    float: left;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+.dropOut ul li a {
+    background: none no-repeat scroll left center transparent;
+    color: #9a9a9a;
+    font-family: "Georgia",serif;
+    font-size: 11px;
+    padding-left: 13px;
+	text-decoration:none;
+}
+#subInstitucional .dropOut ul li a,
+.section-institucional .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowInstitucional.gif");
+}
+#subAcademica .dropOut ul li a,
+.section-academica .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowAcademica.gif");
+}
+#subPosgrado .dropOut ul li a,
+.section-posgrado .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowPosgrado.gif");
+}
+#subInvestigacion .dropOut ul li a,
+.section-investigacion-idihcs .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowInvestigacion.gif");
+}
+#subExtension .dropOut ul li a,
+.section-extension .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowExtension.gif");
+}
+#subBiblioteca .dropOut ul li a,
+.section-biblioteca .innerBreadcrumbs{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/arrowBiblioteca.gif");
+}
+#portal-globalnav li#portaltab-institucional a:hover ,
+#portal-globalnav li[id^="portaltab-institucional"].selected a {
+    color: #9fc22a;
+}
+#portal-globalnav li#portaltab-academica a:hover ,
+#portal-globalnav li[id^="portaltab-academica"].selected a {
+    color: #005b83;
+}
+#portal-globalnav li#portaltab-posgrado a:hover ,
+#portal-globalnav li[id^="portaltab-posgrado"].selected a {
+    color: #87132d;
+}
+#portal-globalnav li#portaltab-investigacion-idihcs a:hover ,
+#portal-globalnav li[id^="portaltab-investigacion-idihcs"].selected a{
+    color: #8a6faf;
+}
+#portal-globalnav li#portaltab-extension a:hover ,
+#portal-globalnav li[id^="portaltab-extension"].selected a{
+    color: #eb6e08;
+}
+#portal-globalnav li#portaltab-biblioteca a:hover ,
+#portal-globalnav li[id^="portaltab-biblioteca"].selected a{
+    color: #12316d;
+}
+#subInstitucional .triangle{
+	left:50px;
+}
+#subAcademica .triangle{
+	left: 141px;
+}
+#subPosgrado .triangle{
+	left: 225px;
+}
+#subInvestigacion .triangle{
+	left: 345px;
+}
+#subExtension .triangle{
+	left: 454px;
+}
+#subBiblioteca .triangle{
+	left: 540px;
+}
+/*****footer*****/
+#portal-footer {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("borderFooter.gif") repeat-x scroll left top #f7f7f7;
+    border-color: #9b9b9b -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: medium none;
+    border-style: solid none none;
+    border-width: 4px medium medium;
+    margin-bottom: 0;
+    padding: 9px 0 25px;
+    text-align: center;
+}
+#portal-footer .pieInstitucional {
+    color: #666666;
+    font-family: "Verdana","DejaVu Sans",sans-serif;
+    font-size: 9.5px !important;
+    margin-bottom: 0;
+}
+#portal-footer .pieInstitucional .facultad {
+    margin-bottom: 13px;
+}
+#portal-footer .pieInstitucional p {
+    line-height: 13px;
+}
+#portal-footer .pieInstitucional a, #portal-footer .pieInstitucional p {
+    color: #666666;
+}
+#portal-footer .pieInstitucional .facultad strong {
+    display: block;
+}
+#portal-footer .pieInstitucional .equipo {
+    margin-bottom: 13px;
+}
+#portal-footer .pieInstitucional a {
+    text-decoration: underline;
+}
+/******bienvenida - titulo y descripción**********/
+.bienvenida {
+    padding: 20px 18px;
+}
+.bienvenida h1 {
+    border: medium none;
+    color: #529303;
+    font-family: "Georgia",serif;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Georgia",serif;
+	font-weight:normal;
+	letter-spacing:0.1px;
+}
+.section-institucional .bienvenida h1,
+body.section-institucional .piePortlet ul li span.dato a.contacto {
+    color: #9fc22a;
+}
+.section-academica .bienvenida h1,
+body.section-academica .piePortlet ul li span.dato a.contacto {
+    color: #005b83;
+}
+.section-posgrado .bienvenida h1,
+body.section-posgrado .piePortlet ul li span.dato a.contacto {
+    color: #87132d;
+}
+.section-investigacion-idihcs .bienvenida h1,
+body.section-investigacion-idihcs .piePortlet ul li span.dato a.contacto {
+    color: #8a6faf;
+}
+.section-extension .bienvenida h1,
+body.section-extension .piePortlet ul li span.dato a.contacto{
+    color: #eb6e08;
+}
+.section-biblioteca .bienvenida h1,
+body.section-biblioteca .piePortlet ul li span.dato a.contacto {
+    color: #12316d;
+}
+.bienvenida #parent-fieldname-description {
+    color: #666;
+    font-size: 11px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+/*******breadcrumbs*********/
+#portal-breadcrumbs {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/lineaBreadcrumb.png") repeat-x scroll left center #ffffff;
+    border: medium none;
+    margin-left: 20px;
+    margin-right: 2em;
+    margin-top: 5px;
+    padding-left: 0;
+    padding-right: 0;
+	height:33px;
+}
+.innerBreadcrumbs {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/dotBreadcrumb.gif") no-repeat scroll left center #ffffff;
+    float: left;
+    margin-top: 8px;
+    padding-left: 15px;
+    padding-right: 4px;
+    width: auto;
+}
+#portal-breadcrumbs .redes {
+    background-color: #ffffff;
+    float: right;
+    margin: 3px 0 15px;
+    padding: 0 25px 0 4px;
+}
+#portal-breadcrumbs span {
+    color: #666666;
+    font-family: Verdana,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+}
+#portal-breadcrumbs a {
+    color: #666666;
+    font-weight: normal;
+    padding-left: 8px;
+    text-decoration: underline;
+}
+#portal-breadcrumbs a {
+    color: #666666;
+    font-weight: normal;
+    padding-left: 8px;
+    text-decoration: underline;
+}
+#portal-personaltools {
+    background: none repeat scroll 0 0 #e3e3e3;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    float: none;
+    font-size: 80%;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    right: 0;
+	top: 64px;
+    width: 100px;
+    z-index: 3;
+}
+.portlet-static-acceso-directo .portletHeader {
+    background-color: #676767;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 15px;
+    padding: 0;
+}
+.portlet-static-acceso-directo .portletHeader span {
+    color: #ffffff;
+    font-size: 10px;
+    margin-left: 4px;
+}
+.portlet-static-acceso-directo .portletItem {
+    border: 1px solid #666666;
+}
+#portal-column-one{
+	width:190px;
+	padding-left:9px;
+}
+#portal-column-two{
+	width:191px;
+	padding-left:21px;
+}
+#portal-column-content{
+	padding-left:14px;
+}
+div.position-1\:4 {
+    margin-left: -1100px;
+}
+table#portal-columns{
+	width:100%;
+}
+#portal-column-one,#portal-column-two{
+	vertical-align:top;
+}
+.linksDerHeader {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/linksDerHeaderBg.png") repeat-x scroll left bottom rgba(0, 0, 0, 0);
+    height: 35px;
+}
+.linksDerContent {
+    background-color: #e7e7cd;
+    padding: 0 0 8px;
+    text-align: center;
+}
+.linksDerFooter {
+    background: url("/++theme++diazotheme.fahceSkin/imagenes/linksDerFooterBg.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+    height: 37px;
+}
+.linksDerContent a:first-child {
+    margin-top: 0;
+}
+.linksDerContent a {
+    border-bottom: 1px dotted #666666;
+    display: block;
+    font-family: "Verdana","DejaVu Sans",sans-serif;
+    margin-left: 6px;
+    margin-top: 9px;
+    width: 179px;
+}
+.linksDer{
+	width:191px;
+}
+#portal-column-two .portlet-static-portlet{
+	text-decoration:right;
+	width:191px;
+} 
+#menuTabs{
+	border-bottom:1px solid #9a9a9a;
+	padding-left:2px;
+}
+#menuTabs a{
+	background-color:#9a9a9a;
+	float:left;
+	display:block;
+	font-family:"Georgia",serif;
+	font-size:10px;
+	font-weight:bold;
+	color:#ffffff;
+	width:127px;
+	height:17px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	text-indent:6px;
+	line-height:16px;
+	margin-top:4px;
+}
+#menuTabs a.selected{
+	height:21px;
+	margin-top: 0;
+}
+.cabezalPortlet{
+	color:#ffffff;
+	padding:1px 1px 1px 9px;
+}
+body.section-front-page #menuTabs a.selected{
+	background-color:#65ab10;
+}
+body.section-institucional #menuTabs a.selected,
+body.section-institucional .cabezalPortlet{
+	background-color: #9fc22a !important;
+}
+body.section-academica #menuTabs a.selected,
+body.section-academica .cabezalPortlet{
+	background-color: #005b83 !important;
+}
+body.section-posgrado #menuTabs a.selected,
+body.section-posgrado .cabezalPortlet{
+	background-color: #87132d !important;
+}
+body.section-investigacion-idihcs #menuTabs a.selected,
+body.section-investigacion-idihcs .cabezalPortlet{
+	background-color: #8a6faf !important;
+}
+body.section-extension #menuTabs a.selected,
+body.section-extension .cabezalPortlet{
+	background-color: #eb6e08 !important;
+}
+body.section-biblioteca #menuTabs a.selected,
+body.section-biblioteca .cabezalPortlet{
+	background-color: #12316d !important;
+}
+h2#tituloInterno{
+	font-size:22px;
+	color:#666666;
+	margin-bottom:13px;
+}
+/*************portlet de navegación************/
+.portletNavegacion{}
+.portletNavegacion ul{
+	border-top:1px solid;
+	margin-bottom:20px;
+}
+.portletNavegacion ul li{
+	border-bottom:1px solid;
+	display:block;
+}
+.portletNavegacion ul li a{
+	color:#000000;
+	font-family:"Verdana",sans-serif;
+	font-size:11px;
+	background:url("/++theme++diazotheme.fahceSkin/imagenes/dotMenu.gif") no-repeat left 3px transparent;
+	padding-left:20px;
+	display:block;
+	margin:3px 0 4px 0;
+}
+.portletNavegacion ul li.indent a{
+	padding-left:32px;
+	background-image:none;
+}
+body.section-front-page .portletNavegacion ul,
+body.section-front-page .portletNavegacion ul li{
+	border-color:#65ab10;
+}
+body.section-institucional .portletNavegacion ul,
+body.section-institucional .portletNavegacion ul li,
+body.section-institucional .portletInformacion{
+	border-color: #9fc22a;
+}
+body.section-academica .portletNavegacion ul,
+body.section-academica .portletNavegacion ul li,
+body.section-academica .portletInformacion{
+	border-color: #005b83;
+}
+body.section-posgrado .portletNavegacion ul,
+body.section-posgrado .portletNavegacion ul li,
+body.section-posgrado .portletInformacion{
+	border-color: #87132d;
+}
+body.section-investigacion-idihcs .portletNavegacion ul,
+body.section-investigacion-idihcs .portletNavegacion ul li,
+body.section-investigacion-idihcs .portletInformacion{
+	border-color: #8a6faf;
+}
+body.section-extension #menuTabs .portletNavegacion ul,
+body.section-extension #menuTabs .portletNavegacion ul li,
+body.section-extension #menuTabs .portletInformacion{
+	border-color: #eb6e08;
+}
+body.section-biblioteca #menuTabs .portletNavegacion ul,
+body.section-biblioteca #menuTabs .portletNavegacion ul li,
+body.section-biblioteca #menuTabs .portletInformacion{
+	border-color: #12316d;
+}
+.portletInformacion{
+	font-size:10px;
+	font-family:"Verdana",sans-serif;
+	border:1px solid ;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.portletInformacion ul{
+	margin: 0  9px;
+}
+.portletInformacion ul li{
+	display:block;
+	padding-left:10px;
+	margin:6px 0;
+	background:no-repeat left 4px transparent;
+}
+
+body.section-institucional .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotInstitucional.gif");
+}
+body.section-academica .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotAcademica.gif");
+}
+body.section-posgrado .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotPosgrado.gif");
+}
+body.section-investigacion-idihcs .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotInvestigacion.gif");
+}
+body.section-extension #menuTabs .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotExtension.gif");
+}
+body.section-biblioteca #menuTabs .portletInformacion ul li{
+	background-image:url("/++theme++diazotheme.fahceSkin/imagenes/dotBiblioteca.gif");
+}
+.contenidoPortlet{
+	padding-bottom:3px;
+}
+.contenidoPortlet ul li span{
+	display:block;
+}
+.contenidoPortlet ul li span.dato,
+.contenidoPortlet ul li span.dato a{
+	color:#000000;
+}
+.contenidoPortlet ul li span.dato a{
+	color:#000000;
+}
+.contenidoPortlet ul li span.dato a:hover{
+	text-decoration:underline;
+}
+.piePortlet ul{
+	border-top:1px dotted #6b6b6b;
+	margin-top:3px;
+	padding:3px 0;
+}
+.piePortlet ul li a{
+	text-decoration:underline;
+}

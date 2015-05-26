@@ -1,0 +1,106 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="Products.FahceContents">
+
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
+
+  <!-- Grok the package to initialize schema interfaces and content classes -->
+  <grok:grok package="." />
+
+  <include package="plone.app.relationfield" />
+    <include package="plone.app.portlets"/>
+
+
+  <!-- Register a resource directory from which we can deploy static
+   resource files. -->
+  <browser:resourceDirectory
+    name="Products.FahceContents"
+    directory="resources" />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Register an extension profile to make the product installable
+       in Plone -->
+  <genericsetup:registerProfile
+      name="default"
+      title="contenido para el sitio FaHCE"
+      directory="profiles/default"
+      description="Extension profile for contenido para el sitio FaHCE"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+    <!--adapter for="Products.FahceContents.persona.IPersona"
+    provides="Products.FahceContents.persona.INameFromPersonaNames"
+    factory="Products.FahceContents.persona.NameFromPersonaNames"
+    /-->
+
+    <!--adapter for="Products.FahceContents.persona.IPersona"
+             factory="Products.FahceContents.persona.NameForPersona"
+             provides="Products.FahceContents.persona.INameForPersona"
+    /-->
+
+    <plone:portlet
+        name="info_area_portlet"
+        interface=".portlets.info_area_portlet.IInfoAreaPortlet"
+        assignment=".portlets.info_area_portlet.Assignment"
+        renderer=".portlets.info_area_portlet.Renderer"
+        addview=".portlets.info_area_portlet.AddForm"
+        />
+
+    <plone:portlet
+        name="menu_portlet"
+        interface=".portlets.menu_portlet.IMenuPortlet"
+        assignment=".portlets.menu_portlet.Assignment"
+        renderer=".portlets.menu_portlet.Renderer"
+        addview=".portlets.menu_portlet.AddForm"
+        />
+
+    <plone:portlet
+        name="perfiles_portlet"
+        interface=".portlets.perfiles_portlet.IPerfilesPortlet"
+        assignment=".portlets.perfiles_portlet.Assignment"
+        renderer=".portlets.perfiles_portlet.Renderer"
+        addview=".portlets.perfiles_portlet.AddForm"
+        />
+
+   <!-- Cuando se crea o modifica el objeto persona pasa el evento correspondiente como parámetro a la función rename -->
+
+   <subscriber
+          for="Products.FahceContents.persona.IPersona
+         zope.lifecycleevent.IObjectAddedEvent"
+    handler=".persona.rename"
+    />
+
+   <subscriber
+          for="Products.FahceContents.persona.IPersona
+         zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".persona.rename"
+    />
+
+    <subscriber
+   for="Products.FahceContents.super_area.ISuperArea
+   zope.lifecycleevent.IObjectAddedEvent"
+   handler=".eventos.onCreateSuperArea"
+   />
+
+    <subscriber
+   for="Products.FahceContents.area.IArea
+   zope.lifecycleevent.IObjectAddedEvent"
+   handler=".eventos.onCreateArea"
+   />
+
+<utility
+component=".vocabularios.NoticiasVocabFactory"
+name="vocabularios.Noticias"
+/>
+
+</configure>

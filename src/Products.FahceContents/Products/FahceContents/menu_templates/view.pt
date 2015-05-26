@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.FahceContents">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+     <tal:r tal:repeat="obj view/dame_enlaces">
+       <span tal:content="python: obj[0]">Enlace</span>
+       <span tal:condition="not: context/@@plone_portal_state/anonymous" tal:attributes="id python:'editar-'+str(1);"><a href="#" tal:attributes="href python:obj[1]+'/edit';"><button>Editar</button></a></span>
+     </tal:r>
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

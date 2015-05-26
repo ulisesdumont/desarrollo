@@ -1,0 +1,62 @@
+<script>
+jQuery(function($) {
+
+    "use strict";
+
+    /**
+      * Convert one front page link to AJAX pop-up
+      */
+    function linkPopupPage() {
+        $(".persona, .contacto").prepOverlay({
+            subtype: 'ajax',
+            // part of Plone page going into pop-up dialog content area
+            filter: '#content > *'
+        });
+    }
+
+    $(document).ready(function() {
+        linkPopupPage();
+    });
+
+})(jQuery);
+
+</script>
+
+<div class="component_contentCuerpo portletInformacion" tal:define="dato_area view/dame_info">
+	<div class="cabezalPortlet">Información del Área</div>	
+	<div class="contenidoPortlet">
+		<ul>
+			<tal:r tal:repeat="obj dato_area/cargos">			
+				<li>
+					<span tal:content="python: obj[0]">Cargo</span>
+					<span class="dato"><a href="" class="persona" tal:attributes="href python: '/'.join(obj[1].to_object.getPhysicalPath())" tal:content="python: obj[1].to_object.nombre+' '+obj[1].to_object.apellido">Persona</a></span>
+				</li>
+			</tal:r>	
+			<li>
+				<span>Edificio</span>
+				<span class="dato" tal:content="dato_area/edificio | nothing"></span>
+			</li>
+			<li>
+				<span>Oficina</span>
+				<span class="dato" tal:content="dato_area/oficina | nothing"></span>
+			</li>
+			<li>
+				<span>Interno</span>
+				<span class="dato" tal:content="dato_area/telefono | nothing"></span>
+			</li>
+			<li>
+
+			</li>
+		</ul>
+	</div>
+	<div class="piePortlet">
+		<ul>
+			<li>
+				<span>Env&iacute;enos un correo</span>
+				<span  class="dato">
+					<a href="formulario" class="contacto" tal:content="dato_area/email | nothing">
+					</a></span>
+			</li>
+		</ul>
+	</div>
+</div>

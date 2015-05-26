@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="Products.FahceContents">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main" >
+<tal:r tal:define="obj view/dameItem">
+<h3 tal:content="python: obj[0][0]">Titulo</h3>
+<p class="discreet" tal:content="python: obj[0][1]"></p>
+<p><strong>Perfiles: </strong> 
+<span tal:repeat="perfil python:obj[0][2]">
+<span tal:content="python:perfil"/>
+</span>
+</p>
+<p><strong>Destino: </strong><span tal:content="python: obj[0][3]"></span></p>
+</tal:r>
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>

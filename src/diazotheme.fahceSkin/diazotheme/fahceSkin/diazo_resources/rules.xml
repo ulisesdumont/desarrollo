@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules 
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Agrega todo el contenido de Head en el sitio web, incluye links de css y javascripts -->
+
+	<before	content="/html/head/base |	/html/head/style |	/html/head/script |	/html/head/link |	/html/head/comment()" theme-children="/html/head" />   
+
+    <!-- Esta regla selecciona los elementos base para aplicar el tema. Asi se evita que los popups de edición se alteren en su visualización -->
+
+    <rules css:if-content="body.section-front-page, body.section-institucional, body.section-academica, body.section-posgrado, body.section-investigacion-idihcs, body.section-extension, body.section-biblioteca, body.site-fahceDiazo">
+		<theme href="index.html" />
+  	</rules>
+
+	<!--A partir de acá se muestran todos los elementos comunes al sitio web-->
+
+		<merge attributes="class" css:theme="body" css:content="body" />
+
+        <replace css:theme="title" css:content="title" />
+
+        <replace css:theme="#headerTop" css:content="#headerTop" href="/++theme++diazotheme.fahceSkin/externos.html" />
+
+        <append css:theme="#portal-top" css:content="#portal-header #portal-globalnav" />
+
+        <append css:theme="#portal-top" css:content="#portal-personaltools" css:if-content="body.userrole-authenticated" />
+
+        <replace css:theme=".submenuContainer" css:content=".submenuContainer" href="/++theme++diazotheme.fahceSkin/externos.html" />
+
+        <replace css:theme="#portal-footer" css:content="#portal-footer" href="/++theme++diazotheme.fahceSkin/externos.html" />
+
+		<append css:theme="td#portal-column-one" css:content-children="#portal-column-one" />
+
+		<append css:theme="td#portal-column-content" css:content-children="#portal-column-content" />
+
+		<append css:theme="td#portal-column-two" css:content-children="#portal-column-two" />
+
+		<drop css:content="#parent-fieldname-title" />
+
+		<append css:theme=".bienvenida" css:content="#parent-fieldname-title" method="raw" />
+
+		<drop css:content="#parent-fieldname-description" />
+
+		<append css:theme=".bienvenida" css:content="#parent-fieldname-description" method="raw" />
+
+		<drop css:content="#portal-breadcrumbs" />
+
+		<append css:theme="#portal-breadcrumbs .innerBreadcrumbs" css:content-children="#portal-breadcrumbs"  method="raw" />
+
+        <after css:theme=".innerBreadcrumbs" css:content=".redes" href="/++theme++diazotheme.fahceSkin/externos.html" />
+
+
+	<!--En la siguiente regla se colocan los componentes que refieren a la pagina principal del sitio web-->	
+
+    <rules css:if-not-content="body.template-login_form, div#edit-bar, body.template-logged_out">
+
+		<theme href="index.html" />
+
+		<replace css:theme="h2#tituloInterno">
+			<h2 id="tituloInterno">Novedades</h2>
+		</replace> 
+
+	    <after css:theme="#tituloInterno" css:content="#menuTabs" href="/++theme++diazotheme.fahceSkin/externos.html" />	
+
+		<drop css:content="p#link-presentation" />	
+	
+  	</rules>
+
+
+</rules>

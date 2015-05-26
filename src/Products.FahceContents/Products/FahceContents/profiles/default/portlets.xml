@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+  <portlet
+    addview="info_area_portlet"
+    title="Informacion del area"
+    description="Un portlet que muestra informacion del area"
+   >
+    <for interface="plone.leftcolumn" />
+  </portlet>
+  <portlet
+    addview="menu_portlet"
+    title="Menu del area"
+    description="Un portlet que muestra el menu del area"
+   >
+    <!--for interface="plone.app.portlets.interfaces.ILeftColumn" /-->
+  </portlet>
+  <portlet
+    addview="perfiles_portlet"
+    title="Accesos directos"
+    description="Muestra un listado de enlaces segun el perfil"
+   >
+    <!--for interface="plone.app.portlets.interfaces.ILeftColumn" /-->
+  </portlet>
+<assignment
+    type="perfiles_portlet"
+    manager="plone.leftcolumn"
+    category="context"
+    key="/"
+    name="perfiles"
+    >
+</assignment>
+<assignment
+    type="menu_portlet"
+    manager="plone.leftcolumn"
+    category="context"
+    key="/institucional"
+    name="menu"
+    insert-before="*"
+    >
+</assignment>
+<assignment
+    type="info_area_portlet"
+    manager="plone.leftcolumn"
+    category="context"
+    key="/institucional"
+    name="info"
+    >
+</assignment>
+<assignment
+    type="menu_portlet"
+    manager="plone.leftcolumn"
+    category="context"
+    key="/academica"
+    name="menu"
+    insert-before="*"
+    >
+</assignment>
+<assignment
+    type="info_area_portlet"
+    manager="plone.leftcolumn"
+    category="context"
+    key="/academica"
+    name="info"
+    >
+</assignment>
+
+<blacklist
+        manager="plone.leftcolumn"
+        category="context"
+        location="/institucional"
+        status="block"
+        />
+<blacklist
+        manager="plone.leftcolumn"
+        category="context"
+        location="/academica"
+        status="block"
+        />
+<blacklist
+        manager="plone.leftcolumn"
+        category="context"
+        location="/posgrado"
+        status="block"
+        />
+
+</portlets>

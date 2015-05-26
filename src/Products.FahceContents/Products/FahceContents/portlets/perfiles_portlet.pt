@@ -1,0 +1,37 @@
+<script>
+(function($) {
+	$(document).ready(function(){
+		$(".link, .accesos, #volver").css("display", "none");
+		$(".perfil").click(function(){
+			$(".accesos").css("display", "none");
+			$("."+this.id).css("display", "block");
+			$(".perfiles").css("display", "none");
+			$("#volver").css("display", "block");
+		});
+		$("#volver").click(function(){
+			$(".link, #volver").css("display", "none");
+			$(".perfiles").css("display", "block");
+		});
+	});
+})(jQuery);
+</script>
+<div class="component_contentCuerpo portletInformacion" tal:define="accesos view/dameItems">
+	<div class="cabezalPortlet perfiles">Perfiles</div>
+	<div class="cabezalPortlet accesos">Accesos directos</div>
+<div class="perfiles">
+<p>Usted es:</p>
+<a name="perfil" class="perfil" id="Alumno">Alumno</a><br />
+<acceso name="perfil" class="perfil" id="Docente">Docente<br />
+<acceso name="perfil" class="perfil" id="Investigador">Investigador<br />
+<acceso name="perfil" class="perfil" id="No-docente">No docente<br />
+<acceso name="perfil" class="perfil" id="Extranjero">Extranjero<br />
+<acceso name="perfil" class="perfil" id="link">Visitante<br />
+</div>
+<tal:r tal:repeat="obj python:accesos">
+<a href="#" tal:attributes="class python:'link '+obj[2];href python:obj[3]">
+<h5 tal:content="python:obj[0]"/>	
+<h6 tal:content="python:obj[1]"/>	
+</a>
+</tal:r>
+<a class="link" id="volver">Volver</a>
+</div>

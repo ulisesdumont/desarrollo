@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+from five import grok
+from plone.supermodel import model
+from plone.directives import form
+from zope import schema
+from z3c.form import button, field
+from Products.CMFCore.interfaces import ISiteRoot
+from zope.interface import Interface
+from Products.FahceContents import MessageFactory as _
+
+class IMyForm(model.Schema):
+
+    asunto = schema.TextLine(title=_(u"Asunto"))
+    mensaje = schema.Text(title=_(u"Mensaje"))
+
+class MyForm(form.SchemaForm):
+    grok.name('formulario')
+    grok.require('zope2.View')
+    grok.context(Interface)
+
+    schema = IMyForm
+    ignoreContext = True
+
+    label = _(u"Contacto")
+    description = _(u"Envíenos su consulta")
+
+    def getContent(self):
+        data = {}
+        data['asunto'] = u"asunto"
+        data['mensaje'] = u"mensaje"
+    
+    @button.buttonAndHandler(_(u'Enviar'))
+    def handleOk(self, action):
+        data, errors = self.extractData()
+        #self.context.MailHost.send(subject=data["asunto"], messageText=data["mensaje"], mto='mesterellas@fahce.unlp.edu.ar', mfrom='yyy@yahoo.com')
+        url = self.context.absolute_url()
+        response.redirect(url)
+        
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+
+       
+    @button.buttonAndHandler(_(u"Cancelar"))
+    def handleCancel(self, action):
+        return
